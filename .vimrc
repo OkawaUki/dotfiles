@@ -36,5 +36,6 @@ set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V
 set cmdheight=2
 set laststatus=2
 set backupdir=~/.vim/tmp
+set tw=0
 syntax on
 colorscheme desert
