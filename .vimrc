@@ -32,6 +32,7 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set autoindent
+set smartindent
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 set cmdheight=2
 set laststatus=2
