@@ -12,8 +12,20 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 " Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-" My Bundles here:
+" 指定した文字を基準に列を整頓してくれる
 NeoBundle 'Align'
+
+" ファイルツリーの表示
+NeoBundle 'scrooloose/nerdtree'
+
+" Gitを使うプラグイン
+NeoBundle 'tpope/vim-fugitive'
+
+" grep検索の実行後にQuickFix Listを表示する
+autocmd QuickFixCmdPost *grep* cwindow
+
+" ステータス行に現在のgitブランチを表示する
+set statusline+=%{fugitive#statusline()}
 
 " Required:
 filetype plugin indent on
@@ -32,7 +44,6 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set autoindent
-set smartindent
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 set cmdheight=2
 set laststatus=2
