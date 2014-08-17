@@ -22,13 +22,29 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
-autocmd BufNewFile,BufRead *.md :set filetype=markdown
 
 " Gitを使うプラグイン
 NeoBundle 'tpope/vim-fugitive'
 
 " grep検索の実行後にQuickFix Listを表示する
 autocmd QuickFixCmdPost *grep* cwindow
+
+"plasticboy/vim-markdownはfiletypeをmkdにしてしまうらしい
+fun! MyAddToFileType(ft)
+  if index(split(&ft, '\.'), a:ft) == -1
+      let &ft = a:ft
+   endif
+endfun
+
+"au FileType markdown call MyAddToFileType('mkd')
+au FileType mkd      call MyAddToFileType('markdown')
+
+" *.mdファイルもmdファイルとする
+augroup PrevimSettings
+    autocmd!
+        autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+augroup END
+
 
 " ステータス行に現在のgitブランチを表示する
 set statusline+=%{fugitive#statusline()}
@@ -55,5 +71,6 @@ set cmdheight=2
 set laststatus=2
 set backupdir=~/.vim/tmp
 set tw=0
+set clipboard=unnamed,autoselect
 syntax on
 colorscheme desert
