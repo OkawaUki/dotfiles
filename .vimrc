@@ -18,6 +18,12 @@ NeoBundle 'Align'
 " ファイルツリーの表示
 NeoBundle 'scrooloose/nerdtree'
 
+" markdown用の設定
+NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'kannokanno/previm'
+NeoBundle 'tyru/open-browser.vim'
+autocmd BufNewFile,BufRead *.md :set filetype=markdown
+
 " Gitを使うプラグイン
 NeoBundle 'tpope/vim-fugitive'
 
