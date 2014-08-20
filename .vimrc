@@ -12,6 +12,38 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 " Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
 
+" if_luaが有効ならneocompleteを使う
+NeoBundle has('lua') ? 'Shougo/neocomplete' : 'Shougo/neocomplcache'
+
+if neobundle#is_installed('neocomplete')
+    " neocomplete用設定
+    let g:neocomplete#enable_at_startup = 1
+    let g:neocomplete#enable_ignore_case = 1
+    let g:neocomplete#enable_smart_case = 1
+    if !exists('g:neocomplete#keyword_patterns')
+        let g:neocomplete#keyword_patterns = {}
+    endif
+    let g:neocomplete#keyword_patterns._ = '\h\w*'
+    let g:neocomplete#sources#dictionary#dictionaries = {
+        \ 'default' : '',
+        \ 'vimshell' : $HOME.'/.vimshell_hist',
+        \ 'scheme' : $HOME.'/.gosh_completions'
+        \ }
+elseif neobundle#is_installed('neocomplcache')
+    " neocomplcache用設定
+    let g:neocomplcache_enable_at_startup = 1
+    let g:neocomplcache_enable_ignore_case = 1
+    let g:neocomplcache_enable_smart_case = 1
+    if !exists('g:neocomplcache_keyword_patterns')
+        let g:neocomplcache_keyword_patterns = {}
+    endif
+    let g:neocomplcache_keyword_patterns._ = '\h\w*'
+    let g:neocomplcache_enable_camel_case_completion = 1
+    let g:neocomplcache_enable_underbar_completion = 1
+endif
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+
 " 指定した文字を基準に列を整頓してくれる
 NeoBundle 'Align'
 
@@ -58,7 +90,6 @@ NeoBundleCheck
 
 let g:Align_xstrlen = 3
 set ambiwidth=double
-set paste
 set number
 set title
 set expandtab
