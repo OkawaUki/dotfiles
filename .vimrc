@@ -55,6 +55,8 @@ NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
 
+let g:vim_markdown_folding_disabled=1
+
 " Gitを使うプラグイン
 NeoBundle 'tpope/vim-fugitive'
 
@@ -104,5 +106,7 @@ set nobackup
 set noswapfile
 set tw=0
 set clipboard=unnamed,autoselect
+set backspace=start,eol,indent
+set ic
 syntax on
 colorscheme desert
