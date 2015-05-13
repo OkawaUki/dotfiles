@@ -86,7 +86,7 @@ augroup END
 set statusline+=%{fugitive#statusline()}
 
 " Required:
-filetype plugin indent on
+filetype plugin indent off
 
 " If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.
