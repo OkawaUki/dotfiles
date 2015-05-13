@@ -1,2 +1,4 @@
-export CLICOLOR=1
-export LSCOLORS=DxGxcxdxCxegedabagacad
+PATH=/usr/local/Cellar/vim/7.4.335/bin:/usr/local/git/bin:$PATH
+export PATH
+alias ls='ls -G'
+export LSCOLORS=gxfxcxdxbxegedabagacad
