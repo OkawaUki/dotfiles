@@ -8,7 +8,6 @@ endif
 " Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
-call neobundle#end()
 
 " Let NeoBundle manage NeoBundle
 " Required:
@@ -62,6 +61,7 @@ let g:vim_markdown_folding_disabled=1
 " Gitを使うプラグイン
 NeoBundle 'tpope/vim-fugitive'
 
+
 " grep検索の実行後にQuickFix Listを表示する
 autocmd QuickFixCmdPost *grep* cwindow
 
@@ -91,6 +91,8 @@ filetype plugin indent off
 " If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.
 NeoBundleCheck
+
+call neobundle#end()
 
 let g:Align_xstrlen = 3
 set ambiwidth=double
