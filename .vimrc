@@ -55,6 +55,9 @@ NeoBundle 'marijnh/tern_for_vim', {
 " install plugin for golang
 NeoBundle 'fatih/vim-go'
 
+" install badwolf
+NeoBundle 'w0ng/vim-hybrid'
+
 call neobundle#end()
 
 " Required:
@@ -132,3 +135,7 @@ set laststatus=2
 
 " disable preview window of the completion
 set completeopt-=preview
+
+" settings for color scheme
+set background=dark
+colorscheme hybrid
