@@ -52,6 +52,12 @@ NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascr
 " install plugin for golang
 NeoBundle 'fatih/vim-go'
 
+" install plugin for display source tree
+NeoBundle 'scrooloose/nerdtree'
+
+" install plugin for coffee-script
+NeoBundle 'kchmck/vim-coffee-script'
+
 " install badwolf
 NeoBundle 'w0ng/vim-hybrid'
 
@@ -121,6 +127,9 @@ set shiftwidth=4
 " indent setting for .js extension file (space tab, width=2)
 au BufNewFile,BufRead *.js set expandtab tabstop=2 shiftwidth=2
 
+" indent setting for .coffee extension file (space tab, width=2)
+au BufNewFile,BufRead *.coffee set expandtab tabstop=2 shiftwidth=2
+
 " indent setting for .md extension file (space tab, width=1)
 au BufNewFile,BufRead *.md set expandtab tabstop=1 shiftwidth=1
 
@@ -135,4 +144,6 @@ set completeopt-=preview
 
 " settings for color scheme
 set background=dark
+let g:hybrid_use_iTerm_colors = 1
 colorscheme hybrid
+syntax on
