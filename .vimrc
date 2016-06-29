@@ -46,11 +46,8 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " use neocomplete when if_lua is enable
 NeoBundle has('lua') ? 'Shougo/neocomplete' : 'Shougo/neocomplcache'
 
-" use tern project for javascript completion
-NeoBundle 'marijnh/tern_for_vim', {
-  \ 'build': {
-  \   'others': 'npm install'
-  \}}
+" install js syntax highlighter
+NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
 
 " install plugin for golang
 NeoBundle 'fatih/vim-go'
