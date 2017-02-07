@@ -1,3 +1,6 @@
+" configuration of neovim
+" you need to copy this file to ~/.config/nvim/init.vim
+" this configuration file is required dein.vim and golang
 
 "dein Scripts-----------------------------
 if &compatible
@@ -5,23 +8,18 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=/root/.cache/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim'
+
+let s:dein_dir = expand('~/.cache/dein')
 
 " Required:
-if dein#load_state('/root/.cache/dein')
-  call dein#begin('/root/.cache/dein')
+if dein#load_state(s:dein_dir)
+  call dein#begin(s:dein_dir)
 
   " Let dein manage dein
   " Required:
-  call dein#add('/root/.cache/dein/repos/github.com/Shougo/dein.vim')
+  call dein#add(s:dein_dir . '/repos/github.com/Shougo/dein.vim')
 
-  " Add or remove your plugins here:
-  call dein#add('Shougo/neosnippet.vim')
-  call dein#add('Shougo/neosnippet-snippets')
-
-  " You can specify revision/branch/tag.
-  call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
-  
   " Plugin for golang
   call dein#add('fatih/vim-go')
 
@@ -39,9 +37,9 @@ filetype plugin indent on
 syntax enable
 
 " If you want to install not installed plugins on startup.
-"if dein#check_install()
-"  call dein#install()
-"endif
+if dein#check_install()
+  call dein#install()
+endif
 
 "End dein Scripts-------------------------
 
