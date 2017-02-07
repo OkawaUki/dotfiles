@@ -8,7 +8,7 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim'
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
 let s:dein_dir = expand('~/.cache/dein')
 
