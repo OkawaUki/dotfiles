@@ -8,17 +8,15 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
-
-let s:dein_dir = expand('~/.cache/dein')
+set runtimepath+=/home/ubuntu/.cache/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-if dein#load_state(s:dein_dir)
-  call dein#begin(s:dein_dir)
+if dein#load_state('/home/ubuntu/.cache/dein')
+  call dein#begin('/home/ubuntu/.cache/dein')
 
   " Let dein manage dein
   " Required:
-  call dein#add(s:dein_dir . '/repos/github.com/Shougo/dein.vim')
+  call dein#add('/home/ubuntu/.cache/dein/repos/github.com/Shougo/dein.vim')
 
   " Plugin for golang
   call dein#add('fatih/vim-go')
